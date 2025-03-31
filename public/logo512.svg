@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#1e293b" />
+  
+  <!-- Network blocks - representing subnets -->
+  <rect x="96" y="160" width="320" height="64" rx="16" fill="#8b5cf6" />
+  <rect x="136" y="256" width="240" height="64" rx="16" fill="#10b981" />
+  <rect x="176" y="352" width="160" height="64" rx="16" fill="#f43f5e" />
+  
+  <!-- Stars -->
+  <circle cx="64" cy="80" r="16" fill="#fef08a" />
+  <circle cx="432" cy="64" r="12" fill="#93c5fd" />
+  <circle cx="320" cy="96" r="8" fill="#f5d0fe" />
+  <circle cx="176" cy="112" r="8" fill="#c4b5fd" />
+  <circle cx="400" cy="432" r="12" fill="#e9d5ff" />
+  <circle cx="56" cy="280" r="8" fill="#fef08a" />
+  <circle cx="448" cy="240" r="8" fill="#bae6fd" />
+  <circle cx="96" cy="432" r="12" fill="#fda4af" />
+  
+  <!-- Sparkle effects -->
+  <path d="M368 144l16 -32l16 32l-32 16z" fill="#f9fafb" />
+  <circle cx="80" cy="374" r="5.3" fill="#ffffff" />
+  <circle cx="427" cy="387" r="5.3" fill="#ffffff" />
+  <circle cx="240" cy="70" r="5.3" fill="#ffffff" />
+  
+  <!-- Additional stars for larger icon -->
+  <circle cx="144" cy="48" r="4" fill="#bae6fd" />
+  <circle cx="456" cy="144" r="6" fill="#f5d0fe" />
+  <circle cx="456" cy="336" r="4" fill="#fef08a" />
+  <circle cx="144" cy="456" r="6" fill="#c4b5fd" />
+  <circle cx="48" cy="400" r="4" fill="#93c5fd" />
+  <circle cx="272" cy="48" r="3" fill="#fda4af" />
+</svg>

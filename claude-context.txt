@@ -16,6 +16,8 @@ We are building a web-based CIDR subnet calculator with a visual interface. The 
 - Click-to-place functionality for subnet allocation
 - Consistent UI with context-sensitive instructions
 - Improved type indication with fixed-width type labels
+- Custom favicon and app icons with cosmic theme
+- Complete documentation in README.md
 
 ## Key Features
 1. Input validation for CIDR blocks (max /16)
@@ -32,7 +34,11 @@ We are building a web-based CIDR subnet calculator with a visual interface. The 
 cosmic-subnet-calculator/
 ├── public/
 │   ├── index.html
-│   └── manifest.json
+│   ├── manifest.json
+│   ├── favicon.svg
+│   ├── favicon.ico
+│   ├── logo192.svg
+│   └── logo512.svg
 ├── src/
 │   ├── App.js
 │   ├── App.css
@@ -57,6 +63,11 @@ cosmic-subnet-calculator/
 - Changed background star color to avoid confusion with heading bullet points
 - Reorganized usage instructions into appropriate sections for clarity
 - Added tooltips to provide contextual help for user interactions
+- Updated README.md with comprehensive project details and usage instructions
+- Created custom favicon.svg and app icons (logo192.svg, logo512.svg)
+- Updated manifest.json to reference the new SVG assets
+- Fixed console error related to missing image resources
+- Added attribution for Claude 3.7 Sonnet "Extended thinking" in README.md
 
 ## Known Issues and Future Improvements
 1. Consider optimizing the layout for smaller screens
@@ -69,6 +80,7 @@ cosmic-subnet-calculator/
 - The bar width adapts to the container size
 - Labels are positioned using absolute positioning relative to their blocks
 - Flexbox centering ensures proper alignment of content in fixed-width elements
+- Custom SVG icons for consistent branding across different platforms and sizes
 
 ## Development Notes
 If you need to make changes, focus on the SubnetCalculator.js component, which is the current implementation being used by App.js.
