@@ -62,7 +62,7 @@ const intToIp = (ipInt) => {
 // Function to check if a position is valid for the subnet
 const isValidPosition = (relativePosition, baseSize, subnetPrefix) => {
   if (typeof relativePosition !== 'number' || typeof baseSize !== 'number' || typeof subnetPrefix !== 'number') {
-    console.error('Invalid parameters to isValidPosition:', { relativePosition, baseSize, subnetPrefix });
+    // Invalid parameters check
     return false;
   }
   
@@ -70,7 +70,7 @@ const isValidPosition = (relativePosition, baseSize, subnetPrefix) => {
   const subnetSize = Math.pow(2, 32 - subnetPrefix);
   const positionAlignment = relativePosition % subnetSize;
   
-  console.log(`isValidPosition - relative position: ${relativePosition}, subnet size: ${subnetSize}, alignment: ${positionAlignment}`);
+
   return positionAlignment === 0;
 };
 
@@ -255,7 +255,7 @@ const FixedSubnetCalculator = () => {
 
   // Handle global drag end (for drops outside the bar)
   const handleGlobalDragEnd = useCallback(() => {
-    console.log('Global drag end triggered');
+
     setDraggedSubnet(null);
     setDragPreview(null);
     setValidDropPositions([]);
@@ -286,7 +286,7 @@ const FixedSubnetCalculator = () => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && (draggedSubnet || selectedSubnet)) {
-        console.log('Escape key pressed, canceling drag/selection');
+
         handleGlobalDragEnd();
         setSelectedSubnet(null);
         setValidDropPositions([]);
@@ -302,28 +302,26 @@ const FixedSubnetCalculator = () => {
     const activeSubnet = subnet || draggedSubnet || selectedSubnet;
     
     if (!activeSubnet) {
-      console.warn('calculateValidDropPositions: Missing active subnet');
+
       return [];
     }
     
     if (!baseRange) {
-      console.warn('calculateValidDropPositions: Missing baseRange');
+
       return [];
     }
     
     if (!barWidth) {
-      console.warn('calculateValidDropPositions: Missing barWidth');
+
       return [];
     }
     
-    console.log('Calculating valid positions for subnet:', activeSubnet);
-    console.log('Base CIDR range:', baseRange);
-    console.log('Current bar width:', barWidth);
+
     
     const validPositions = [];
     const subnetSize = Math.pow(2, 32 - activeSubnet.prefix);
     
-    console.log('Subnet size in IPs:', subnetSize);
+
     
     // Iterate through all possible positions within the CIDR range
     let posCount = 0;
@@ -351,22 +349,18 @@ const FixedSubnetCalculator = () => {
           const left = calculatePosition(relativePosition, baseRange.size, barWidth);
           const width = calculateWidth(subnetSize, baseRange.size, barWidth);
           
-          console.log(`Valid position found at ${pos} (${intToIp(pos)}/${activeSubnet.prefix})`);
+
           
           validPositions.push({
             left: left,
             width: width,
             subnet: newSubnet
           });
-        } else {
-          console.log(`Position ${pos} (${intToIp(pos)}) has overlap with existing subnets`);
         }
-      } else {
-        console.log(`Position ${pos} (${intToIp(pos)}) is not valid (alignment issue)`);
       }
     }
     
-    console.log(`Checked ${posCount} possible positions, found ${validPositions.length} valid ones`);
+
     return validPositions;
   }, [draggedSubnet, selectedSubnet, baseRange, barWidth, placedSubnets, movingSubnetIndex]);
 
@@ -374,9 +368,7 @@ const FixedSubnetCalculator = () => {
   useEffect(() => {
     const activeSubnet = draggedSubnet || selectedSubnet;
     if (activeSubnet && baseRange) {
-      console.log('useEffect: Detected changes to active subnet, recalculating positions');
       const validPositions = calculateValidDropPositions(activeSubnet);
-      console.log(`useEffect: Calculated ${validPositions.length} valid positions after update`);
       setValidDropPositions(validPositions);
     } else if (!draggedSubnet && !selectedSubnet) {
       setValidDropPositions([]);
@@ -507,15 +499,12 @@ const FixedSubnetCalculator = () => {
 
   // Initialize on component mount
   useEffect(() => {
-    console.log('Initializing component with CIDR:', cidr);
     if (validateCIDR(cidr)) {
-      console.log('CIDR is valid', cidr);
       const normalized = normalizeCIDR(cidr);
       setNormalizedCidr(normalized);
-      console.log('Normalized CIDR:', normalized);
       
       const range = cidrToRange(normalized);
-      console.log('Setting baseRange to:', range);
+
       setBaseRange({
         ...range,
         cidr: normalized
@@ -523,7 +512,7 @@ const FixedSubnetCalculator = () => {
       
       setAvailableSubnets(generateSubnetSizes(normalized));
     } else {
-      console.error('Invalid CIDR:', cidr);
+
     }
     
     // Update bar width based on container size
@@ -531,7 +520,7 @@ const FixedSubnetCalculator = () => {
       if (cidrBarRef.current) {
         const newWidth = cidrBarRef.current.offsetWidth;
         setBarWidth(newWidth);
-        console.log('Bar width set to:', newWidth);
+
       }
     };
     
@@ -558,8 +547,7 @@ const FixedSubnetCalculator = () => {
 
   // Start dragging a new subnet from the available subnets panel
   const handleDragStart = (e, subnet, type) => {
-    console.log('Starting drag for new subnet:', subnet, 'type:', type);
-    console.log('Current baseRange:', baseRange);
+
     e.dataTransfer.setData('application/json', JSON.stringify({ subnet, type }));
     
     // Make a deep copy of the subnet and add the type
@@ -581,8 +569,7 @@ const FixedSubnetCalculator = () => {
   // Start dragging an existing subnet
   const handlePlacedSubnetDragStart = (e, subnet, index) => {
     e.stopPropagation();
-    console.log('Starting drag for existing subnet:', subnet, 'index:', index);
-    console.log('Current baseRange:', baseRange);
+
     e.dataTransfer.setData('application/json', JSON.stringify({ subnet, index }));
     setDraggedSubnet(subnet);
     setSelectedSubnet(null); // Clear any selection when dragging
@@ -656,7 +643,7 @@ const FixedSubnetCalculator = () => {
   // Handle drop of subnet
   const handleDrop = (e) => {
     e.preventDefault();
-    console.log('Drop event triggered');
+
     
     if (dragPreview && dragPreview.subnet) {
       if (movingSubnetIndex >= 0) {
