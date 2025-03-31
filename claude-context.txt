@@ -1,0 +1,83 @@
+# Cosmic CIDR Subnet Calculator - Project Context
+
+## IMPORTANT NOTE FOR CLAUDE:
+This file should be maintained and updated as the project progresses. Each time significant changes are made, please update this context file with the latest information to ensure continuity between sessions.
+
+## Project Overview
+We are building a web-based CIDR subnet calculator with a visual interface. The tool helps network engineers plan and visualize subnet allocations within a given CIDR block. The application features a drag-and-drop interface for creating and manipulating subnet blocks within an IP address space.
+
+## Current Implementation
+- React application with Tailwind CSS for styling
+- Visual representation of CIDR blocks as a horizontal bar
+- Drag and drop interface for subnet allocation
+- Color-coded subnet types (public, private, database)
+- Real-time validation to prevent overlapping subnets
+- Summary table of allocated subnets
+- Click-to-place functionality for subnet allocation
+- Consistent UI with context-sensitive instructions
+- Improved type indication with fixed-width type labels
+
+## Key Features
+1. Input validation for CIDR blocks (max /16)
+2. Visual representation of IP space with proper CIDR labels
+3. Movable subnet blocks that snap to valid network boundaries
+4. Label for each subnet showing CIDR notation and IP count
+5. Color-coding for different subnet types
+6. Percentage indicator for IP space utilization
+7. Light and dark mode support with cosmic-themed background stars
+8. Highlighting of valid drop positions when placing subnet blocks
+
+## Directory Structure
+```
+cosmic-subnet-calculator/
+├── public/
+│   ├── index.html
+│   └── manifest.json
+├── src/
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   ├── index.css
+│   ├── reportWebVitals.js
+│   └── components/
+│       └── SubnetCalculator.js  # Main implementation
+└── package.json
+```
+
+## Key Components
+1. `SubnetCalculator.js` - The main component containing all the logic and UI for the subnet calculator
+
+## Recent Changes
+- Improved UI text contrast in light mode for better readability
+- Added section-specific instructions for better usability
+- Made double-click behavior consistent for removing subnets in both visualization and table
+- Fixed issue with type labels in the summary table:
+  - Used fixed-width labels to prevent table shifting when changing types
+  - Improved text centering within type labels
+- Changed background star color to avoid confusion with heading bullet points
+- Reorganized usage instructions into appropriate sections for clarity
+- Added tooltips to provide contextual help for user interactions
+
+## Known Issues and Future Improvements
+1. Consider optimizing the layout for smaller screens
+2. Add export/import functionality for subnet configurations
+3. Consider adding validation tooltips for invalid drop positions
+
+## Implementation Details
+- The application uses React's drag and drop API
+- CIDR calculations are performed with bitwise operations
+- The bar width adapts to the container size
+- Labels are positioned using absolute positioning relative to their blocks
+- Flexbox centering ensures proper alignment of content in fixed-width elements
+
+## Development Notes
+If you need to make changes, focus on the SubnetCalculator.js component, which is the current implementation being used by App.js.
+
+## User Interactions
+- Drag subnet blocks from the right panel to the horizontal bar
+- Click subnet blocks to select, then click on the CIDR bar to place
+- Drag existing blocks to reposition them
+- Double-click blocks (in visualization or table) to remove them
+- Click type labels in table to change subnet type
+- View allocation details in the summary table
+- Toggle between light, dark, and auto theme modes
