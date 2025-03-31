@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cosmic-subnet-calculator/static/css/main.21a16443.css",
+    "main.js": "/cosmic-subnet-calculator/static/js/main.9a0e0729.js",
+    "index.html": "/cosmic-subnet-calculator/index.html",
+    "main.21a16443.css.map": "/cosmic-subnet-calculator/static/css/main.21a16443.css.map",
+    "main.9a0e0729.js.map": "/cosmic-subnet-calculator/static/js/main.9a0e0729.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.21a16443.css",
+    "static/js/main.9a0e0729.js"
+  ]
+}

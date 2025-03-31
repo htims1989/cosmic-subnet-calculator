@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <!-- Background -->
+  <rect width="192" height="192" rx="36" fill="#1e293b" />
+  
+  <!-- Network blocks - representing subnets -->
+  <rect x="36" y="60" width="120" height="24" rx="6" fill="#8b5cf6" />
+  <rect x="51" y="96" width="90" height="24" rx="6" fill="#10b981" />
+  <rect x="66" y="132" width="60" height="24" rx="6" fill="#f43f5e" />
+  
+  <!-- Stars -->
+  <circle cx="24" cy="30" r="6" fill="#fef08a" />
+  <circle cx="162" cy="24" r="4.5" fill="#93c5fd" />
+  <circle cx="120" cy="36" r="3" fill="#f5d0fe" />
+  <circle cx="66" cy="42" r="3" fill="#c4b5fd" />
+  <circle cx="150" cy="162" r="4.5" fill="#e9d5ff" />
+  <circle cx="21" cy="105" r="3" fill="#fef08a" />
+  <circle cx="168" cy="90" r="3" fill="#bae6fd" />
+  <circle cx="36" cy="162" r="4.5" fill="#fda4af" />
+  
+  <!-- Sparkle effect -->
+  <path d="M138 54l6 -12l6 12l-12 6z" fill="#f9fafb" />
+  <circle cx="30" cy="140" r="2" fill="#ffffff" />
+  <circle cx="160" cy="145" r="2" fill="#ffffff" />
+  <circle cx="90" cy="26" r="2" fill="#ffffff" />
+</svg>
