@@ -770,7 +770,7 @@ const FixedSubnetCalculator = () => {
     const subnetNumber = subnetNumbers[index] || index + 1;
     
     return (
-      <>
+      <React.Fragment key={`subnet-${index}`}>
         <div 
           key={`block-${index}`}
           draggable
@@ -804,7 +804,7 @@ const FixedSubnetCalculator = () => {
         >
           {intToIp(subnet.start)}/{subnet.prefix} ({subnet.size.toLocaleString()} IPs)
         </div>
-      </>
+      </React.Fragment>
     );
   };
 

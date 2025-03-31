@@ -69,6 +69,7 @@ cosmic-subnet-calculator/
 - Fixed console error related to missing image resources
 - Added attribution for Claude 3.7 Sonnet "Extended thinking" in README.md
 - Removed all console.log debug statements from the SubnetCalculator.js file
+- Fixed React key warning for subnet rendering
 
 ## Known Issues and Future Improvements
 1. Consider optimizing the layout for smaller screens
