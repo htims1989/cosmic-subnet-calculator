@@ -31,12 +31,23 @@ You need to have Node.js and npm installed on your machine.
 
 1. Clone the repository
 2. Install dependencies:
-```
+
+```bash
 npm install
 ```
-3. Start the development server:
-```
+
+1. Start the development server:
+
+```bash
 npm start
+```
+
+## Deploying
+
+To deploy the application to GitHub Pages:
+
+```bash
+npm run deploy
 ```
 
 ## Usage
@@ -54,7 +65,8 @@ npm start
 9. Toggle between light, dark, and auto theme modes with the theme switcher
 
 ## Directory Structure
-```
+
+```text
 cosmic-subnet-calculator/
 ├── public/
 │   ├── index.html
@@ -64,13 +76,13 @@ cosmic-subnet-calculator/
 │   ├── App.css
 │   ├── index.js
 │   ├── index.css
-│   ├── reportWebVitals.js
 │   └── components/
 │       └── SubnetCalculator.js  # Main implementation
 └── package.json
 ```
 
 ## Implementation Details
+
 - React application with Tailwind CSS for styling
 - React's drag and drop API for subnet manipulation
 - CIDR calculations performed with bitwise operations

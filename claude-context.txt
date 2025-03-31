@@ -44,7 +44,6 @@ cosmic-subnet-calculator/
 │   ├── App.css
 │   ├── index.js
 │   ├── index.css
-│   ├── reportWebVitals.js
 │   └── components/
 │       └── SubnetCalculator.js  # Main implementation
 └── package.json
@@ -70,6 +69,7 @@ cosmic-subnet-calculator/
 - Added attribution for Claude 3.7 Sonnet "Extended thinking" in README.md
 - Removed all console.log debug statements from the SubnetCalculator.js file
 - Fixed React key warning for subnet rendering
+- Added GitHub Pages deployment configuration
 
 ## Known Issues and Future Improvements
 1. Consider optimizing the layout for smaller screens
